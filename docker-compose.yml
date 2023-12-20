@@ -1,9 +1,9 @@
-version: '3.4'
+version: '3.8'
 
 x-env-variables: &env-variables
   MYSQL_USER: sampleuser
   MYSQL_PASSWORD: samplepassword
-  MYSQL_DATABASE: sampledb
+  MYSQL_DATABASE: machina_labs
   REACT_APP_SERVER_PORT: 3000
 
 services:
@@ -40,7 +40,7 @@ services:
       - 3000
     environment:
       <<: *env-variables
-      MYSQL_HOST_IP: mysql
+      MYSQL_HOST_IP: db
     ports:
       - 3000:3000
     volumes:
